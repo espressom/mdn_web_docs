@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreateElement</title>
+  </head>
+  <body>
+    <div id="div1">위의 텍스트는 동적으로 생성되었습니다</div>
+  </body>
+  <script>
+    document.body.onload = addElement;
+
+    function addElement() {
+      // 새 div 요소 생성
+      const newDiv = document.createElement("div");
+
+      // 만든 div에 내용 추가
+      const newContent = document.createTextNode("안녕! greetings 😊");
+
+      // 새 div요소에 text 노드 추가
+      newDiv.appendChild(newContent);
+
+      // div 요소 및 해당 요소에 작성한 내용을 DOM에 추가
+      const currentDiv = document.getElementById("div1");
+      document.body.insertBefore(newDiv, currentDiv);
+    }
+  </script>
+</html>
